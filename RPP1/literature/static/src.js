@@ -49,6 +49,8 @@ const doiNo =jsonData.results.map(element => {
         // date:jsonData.results[0].response.published_date,
         // page:'1'
       };
+     console.log("data"+JSON.stringify(data,null,2));
+
     const check = await fetch("/literature/reference/my_model/", {
         method: "POST",
         headers: {
@@ -60,5 +62,5 @@ const doiNo =jsonData.results.map(element => {
         body: JSON.stringify(data)
       })
         
-    console.log("check"+check+"data"+JSON.stringify(data,null,2));
+    // console.log("check"+check+"data"+JSON.stringify(data,null,2));
 }
