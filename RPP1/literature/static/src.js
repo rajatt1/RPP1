@@ -33,10 +33,10 @@ async function refapicall(){
     // document.getElementById("add").innerText=JSON.stringify(jsonData.results.map(element => {
     //         return element.response.title ;
     // }),null,2   );
-    const title =jsonData.results.map(element => {
+    const title =arr.map(element => {
       return element.response.title ;
 })
-const doiNo =jsonData.results.map(element => {
+const doiNo =arr.map(element => {
   return element.response.doi ;
 })
     const data = {
@@ -49,7 +49,7 @@ const doiNo =jsonData.results.map(element => {
         // date:jsonData.results[0].response.published_date,
         // page:'1'
       };
-     console.log("data"+JSON.stringify(data,null,2));
+     // console.log("data"+JSON.stringify(data,null,2));
 
     const check = await fetch("/literature/reference/my_model/", {
         method: "POST",
@@ -62,5 +62,5 @@ const doiNo =jsonData.results.map(element => {
         body: JSON.stringify(data)
       })
         
-    // console.log("check"+check+"data"+JSON.stringify(data,null,2));
+    console.log("check"+check+"data"+JSON.stringify(data,null,2));
 }
