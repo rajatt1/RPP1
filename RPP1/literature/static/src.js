@@ -26,13 +26,13 @@ async function refapicall(){
     const response = await fetch(url);
 
     const jsonData = await response.json();
-    console.log(`url = ${url} ${JSON.stringify(jsonData.results,null,2)}`);
+    // console.log(`url = ${url} ${JSON.stringify(jsonData.results,null,2)}`);
 
 
     const arr = jsonData.results;
-    document.getElementById("add").innerText=JSON.stringify(jsonData.results.map(element => {
-            return element.response.title ;
-    }),null,2   );
+    // document.getElementById("add").innerText=JSON.stringify(jsonData.results.map(element => {
+    //         return element.response.title ;
+    // }),null,2   );
     const title =jsonData.results.map(element => {
       return element.response.title ;
 })
