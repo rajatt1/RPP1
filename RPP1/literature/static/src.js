@@ -33,15 +33,21 @@ async function refapicall(){
     document.getElementById("add").innerText=JSON.stringify(jsonData.results.map(element => {
             return element.response.title ;
     }),null,2   );
+    const title =jsonData.results.map(element => {
+      return element.response.title ;
+})
+const doiNo =jsonData.results.map(element => {
+  return element.response.doi ;
+})
     const data = {
       //string
         // author:jsonData.results[0].z_authors[0].given,
-        author:"dharti pr bojh",
-        title:jsonData.results[0].response.title, 
-        volume:jsonData.results[0].snippet,
-        Doi:jsonData.results[0].response.doi,
-        date:jsonData.results[0].response.published_date,
-        page:'1'
+        // author:"dharti pr bojh",
+        title:title, 
+        // volume:jsonData.results[0].snippet,
+        Doi:doiNo,
+        // date:jsonData.results[0].response.published_date,
+        // page:'1'
       };
     const check = await fetch("/literature/reference/my_model/", {
         method: "POST",
