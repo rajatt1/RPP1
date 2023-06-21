@@ -15,8 +15,8 @@ from django.db import models
 class titleM(models.Model):
     title = models.CharField(max_length=255)
     Doi = models.CharField(max_length=255)
-    date = models.CharField(max_length=255) 
-    vol = models.CharField(max_length=255)
+    date = models.CharField(max_length=255,null=True) 
+    vol = models.CharField(max_length=255, null=True)
 
     def __str__(self):
         return f"Title: {self.title}, Doi: {self.Doi}, date: {self.date}, vol: {self.vol}"
