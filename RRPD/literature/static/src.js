@@ -18,6 +18,7 @@
 }
 
 async function refapicall(){
+    const projectName =  document.getElementById("pro").value;
     const resName= document.getElementById("resName").value;
     const mailid =document.getElementById("mailId").value;
     // const response = await fetch(`https://api.unpaywall.org/v2/${doi}?email=${mailid}`);
@@ -41,12 +42,16 @@ async function refapicall(){
 const doiNo =jsonData.results.map(element => {
   return element.response.doi ;
 })
+ const vol =jsonData.results.map(element => {
+  return element.snippet ;
+})
     const data = {
       //string
         // author:jsonData.results[0].z_authors[0].given,
         // author:"dharti pr bojh",
+        projectName: projectName,
         title:title, 
-        // volume:jsonData.results[0].snippet,
+        volume:vol,
         Doi:doiNo,
         // date:jsonData.results[0].response.published_date,
         // page:'1'
