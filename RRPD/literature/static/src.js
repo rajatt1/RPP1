@@ -16,12 +16,7 @@
   }
   return cookieValue;
 }
-const json =async()=>{
-   const data = await ('/your-django-url', function(data) {
-  // Process the received JSON data here
-  console.log(data);
-})};
-json();
+
 async function refapicall(){
     const resName= document.getElementById("resName").value;
     const mailid =document.getElementById("mailId").value;
